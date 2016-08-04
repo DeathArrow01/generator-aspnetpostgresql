@@ -15,6 +15,18 @@ namespace <%= namespace %>.Data
         {
         }
 
+        public ApplicationDbContext()
+        {
+            
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString =
+                "<%= connectionstring %>";
+            optionsBuilder.UseNpgsql(connectionString);
+        }
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

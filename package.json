@@ -1,11 +1,16 @@
 {
-  "name": "generator-aspnet",
+  "name": "generator-aspnetpostgresql",
   "version": "0.2.1",
   "description": "Yeoman generator for ASP.NET Core apps",
   "license": "Apache-2.0",
   "main": "app/index.js",
-  "repository": "OmniSharp/generator-aspnet",
+  "repository": "DeathArrow01/generator-aspnetpostgresql",
   "contributors": [
+    {
+      "name": "Vlad Radu",
+      "email": "vlad.radu@gmail.com",
+      "url": "https://github.com/DeathArrow01"
+    },
     {
       "name": "Sourabh Shirhatti",
       "email": "shirhatti@outlook.com",

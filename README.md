@@ -1,15 +1,15 @@
-# generator-aspnetpostgresql
+# generator-aspnetpostgresqlpostgresql
 
-Replacing SQLite with PostgreSQL
+ASP.NET MVC Core generator with PostgreSQL database support. Based on Omnisharp 7 generator-aspnet
 
 # status
 
-Not yet ready, repository just holds a forked version of generator-aspnet
+Might have bugs, you can open an issue if any.
 
 ## Getting Started
 
 - Dependencies:
-    - Node.js: `brew install node` for Mac OS X, `choco install nodejs` for Windows OS
+    - Node.js: `brew install node` for Mac OS X, `choco install nodejs` for Windows OS (this requires https://chocolatey.org/)
     - Yeoman: `npm install -g yo`
     - Bower `npm install -g bower`
 - Install: `npm install -g generator-aspnetpostgresql`

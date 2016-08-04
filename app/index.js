@@ -19,6 +19,16 @@ var AspnetGenerator = yeoman.generators.Base.extend({
 
   init: function() {
     this.log(yosay('Welcome to the marvellous ASP.NET Core generator!'));
+    this.log(chalk.green('This is an ugly hack of Omnisharp ASp net generator to support PostgreSQL databases.'));
+    this.log();
+    this.log();
+    this.log(chalk.green('If you have questions or suggestions, you can reach me at vlad.radu@gmail.com .'));
+    this.log();
+    this.log();
+    this.log(chalk.green('github repository: https://github.com/DeathArrow01/generator-aspnetpostgresql'));
+    this.log();
+    this.log();
+    this.log();    
     this.templatedata = {};
   },
 
@@ -32,6 +42,7 @@ var AspnetGenerator = yeoman.generators.Base.extend({
         this.log('"%s" is not a valid project type', chalk.cyan(this.type));
         this.type = undefined;
         this.applicationName = undefined;
+        this.connectionstring = undefined;
       } else {
         this.log('Creating "%s" project', chalk.cyan(this.type));
       }
@@ -55,7 +66,7 @@ var AspnetGenerator = yeoman.generators.Base.extend({
             name: 'Console Application',
             value: 'consoleapp'
           }, {
-            name: 'Web Application',
+            name: 'MVC Web Application using PostgreSQL database',
             value: 'web'
           }, {
             name: 'Web Application Basic [without Membership and Authorization]',
@@ -109,8 +120,9 @@ var AspnetGenerator = yeoman.generators.Base.extend({
     this.templatedata.namespace = projectName(this.applicationName);
     this.templatedata.applicationname = this.applicationName;
     this.templatedata.guid = guid.v4();
-    this.templatedata.sqlite = (this.type === 'web') ? true : false;
+    this.templatedata.sqlite = (this.type === 'web') ? true : false;    
     this.templatedata.ui = this.ui;
+    this.templatedata.connectionstring = this.connectionstring;
   },
 
   askForName: function() {
@@ -157,6 +169,79 @@ var AspnetGenerator = yeoman.generators.Base.extend({
       this._buildTemplateData();
     }
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+askConnectionDetails: function() {
+    if (!this.connectionstring) {
+      var done = this.async();
+      var userID = 'username';
+      var password = 'password';
+      var host = 'localhost';
+      var port = '5432';
+      var database = 'database';
+      
+      var prompts = [{
+        name: 'userID',
+        message: 'What\'s PostgreSQL user name?',
+        default: userID
+      },
+      {
+        name: 'password',
+        message: 'Input your PostgreSQL server password',
+        default: password
+      },
+      {
+        name: 'host',
+        message: 'What\'s the hostname of the PostgreSQL Server?',
+        default: host
+      },
+      {
+        name: 'port',
+        message: 'What\'s port the PostgreSQL server is listening to?',
+        default: port
+      },
+      {
+        name: 'database',
+        message: 'What\'s the database name?',
+        default: database
+      }
+      ];
+      this.prompt(prompts, function (props) {
+        this.userID = props.userID;
+        this.password = props.password;
+        this.host = props.host;
+        this.port = props.port;
+        this.database = props.database;
+        this.connectionstring = 'User ID=' + this.userID + ';' + 'Password=' + this.password + ';' + 'Host=' + this.host + ';' + 'Port=' + this.port + ';' + 'Database=' + this.database + ';' + 'Pooling=true;';
+        this._buildTemplateData();
+        done();
+      }.bind(this));
+    } else {
+      this._buildTemplateData();
+    }
+  },
+
+
+
+
+
+
+
+
+
+
 
   writing: function() {
     this.sourceRoot(path.join(__dirname, './templates/projects'));
@@ -346,7 +431,8 @@ var AspnetGenerator = yeoman.generators.Base.extend({
     this.log(chalk.green('    dotnet restore'));
     this.log(chalk.green('    dotnet build') + ' (optional, build will also happen when it\'s run)');
     if(this.type === 'web') {
-      this.log(chalk.green('    dotnet ef database update') + ' (to create the SQLite database for the project)');
+      this.log(chalk.green('    dotnet ef migrations add MigrationName') + ' (to initiate an initial database migration)' );
+      this.log(chalk.green('    dotnet ef database update') + ' (to create the PostgreSQL database for the project)');
     }
     switch (this.type) {
       case 'consoleapp':

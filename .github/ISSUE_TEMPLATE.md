@@ -29,9 +29,9 @@ yo --version
 #### Generator version
 NPM 3.*:
 ```
-npm list -g generator-aspnet
+npm list -g generator-aspnetpostgresql
 ```
 NPM 2.*:
 ```
-npm ls generator-aspnet -ls=0 --long
+npm ls generator-aspnetpostgresql -ls=0 --long
 ```

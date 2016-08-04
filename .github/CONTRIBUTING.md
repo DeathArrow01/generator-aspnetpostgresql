@@ -1,4 +1,4 @@
-# Contributing to `generator-aspnet`
+# Contributing to `generator-aspnetpostgresql`
 
 ## TL;DR
 
@@ -7,13 +7,13 @@ One of the easiest ways to contribute is to participate in discussions and discu
 ## How to contribute
 Follow the steps below.
 
-1. Find an issue to fix on the [issues page](https://github.com/OmniSharp/generator-aspnet/issues). If you have an idea that's not listed go ahead and create a new issue to discuss it.
+1. Find an issue to fix on the [issues page](https://github.com/DeathArrow1/generator-aspnetpostgresql/issues). If you have an idea that's not listed go ahead and create a new issue to discuss it.
 1. Comment on the issue that you're interested in taking ownership of. Include details of your proposed changes.
 1. One of the contributors will comment back and eventually assign the item to you
 
 ## How to update the yeoman generator
 
-The code for the yeoman generator is located at [index.js](https://github.com/OmniSharp/generator-aspnet/blob/master/app/index.js). If you need to make changes to that make them in a feature branch and send changes in a PR to the `master` branch. A contributor will comment back and eventually merge the changes. On release these changes will be merged to the `release` branch and the npm package will be updated.
+The code for the yeoman generator is located at [index.js](https://github.com/DeathArrow1/generator-aspnetpostgresql/blob/master/app/index.js). If you need to make changes to that make them in a feature branch and send changes in a PR to the `master` branch. A contributor will comment back and eventually merge the changes. On release these changes will be merged to the `release` branch and the npm package will be updated.
 
 ### How to make changes to the templates
 The templates for the project types are stored in the /samples directory and each subgenerator has its own directory.
@@ -90,4 +90,4 @@ If your PR gets lengthy with updates from new commits, you could do some rebasin
 
 ## The content of this file
 
-The content of this file is loosely based on [aspnet/Home/CONTRIBUTING.md](https://github.com/aspnet/Home/blob/dev/CONTRIBUTING.md) file and the `generator-aspnet` [own wiki contributing guidelines](https://github.com/OmniSharp/generator-aspnet/wiki/How-to-Contribute)
+The content of this file is loosely based on [aspnet/Home/CONTRIBUTING.md](https://github.com/aspnet/Home/blob/dev/CONTRIBUTING.md) file 

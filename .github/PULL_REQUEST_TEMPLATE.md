@@ -8,4 +8,4 @@ Summary of the changes in this PR:
 Thanks!
 
 /cc
-@OmniSharp/generator-aspnet-team-push
+@DeathArrow1/generator-aspnetpostgresql-team-push
