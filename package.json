@@ -1,7 +1,7 @@
 {
   "name": "generator-aspnetpostgresql",
   "version": "0.2.1",
-  "description": "Yeoman generator for ASP.NET Core apps",
+  "description": "Yeoman generator for ASP.NET MVC Core apps with PostgreSQL support",
   "license": "Apache-2.0",
   "main": "app/index.js",
   "repository": "DeathArrow01/generator-aspnetpostgresql",
