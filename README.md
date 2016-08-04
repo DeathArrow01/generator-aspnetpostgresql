@@ -1,4 +1,4 @@
-# generator-aspnetpostgresqlpostgresql
+# generator-aspnetpostgresql
 
 ASP.NET MVC Core generator with PostgreSQL database support. Based on Omnisharp 7 generator-aspnet
 
