@@ -2,7 +2,9 @@
 
 Replacing SQLite with PostgreSQL
 
+# status
 
+Not yet ready, repository just holds a forked version of generator-aspnet
 
 ## Getting Started
 
